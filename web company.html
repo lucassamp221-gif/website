@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- EDIT BAGIAN INI: Judul Tab Browser -->
+    <title>Rosavelle Company - Transportasi, Marketing, Desain Grafis & Solusi Pendanaan</title>
+    
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        /* Palet Korporat Elegan: Deep Charcoal, Rose Burgundy & Gold */
+                        primary: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            600: '#be123c',
+                            700: '#9f1239',
+                            800: '#881337',
+                            900: '#4c0519',
+                        },
+                        charcoal: {
+                            800: '#1f242d',
+                            900: '#14171d',
+                            950: '#0d0f14',
+                        },
+                        accent: {
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-stone-50 text-slate-800 antialiased selection:bg-primary-800 selection:text-white">
+
+    <!-- ===================================================================== -->
+    <!-- 1. HEADER & NAVBAR STICKY                                             -->
+    <!-- ===================================================================== -->
+    <header id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- EDIT BAGIAN INI: Logo & Nama Perusahaan -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-800 via-primary-700 to-charcoal-900 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform border border-accent-400/30">
+                        <i class="fa-solid fa-crown text-lg text-accent-400"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-lg sm:text-xl text-charcoal-900 tracking-tight block leading-none">
+                            ROSAVELLE COMPANY
+                        </span>
+                        <span class="text-[10px] sm:text-[11px] font-semibold text-primary-700 tracking-widest uppercase mt-1 block">
+                            Mobility • Marketing • Design • Finance
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Menu Navigasi Desktop -->
+                <nav class="hidden lg:flex items-center gap-7">
+                    <a href="#beranda" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Tentang Kami</a>
+                    <a href="#layanan" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">4 Layanan Utama</a>
+                    <a href="#galeri" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Portofolio & Armada</a>
+                    <a href="#keunggulan" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Keunggulan</a>
+                    <a href="#testimoni" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Testimoni</a>
+                    <a href="#kontak" class="text-sm font-medium text-slate-700 hover:text-primary-700 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Tombol CTA Pengajuan / Pemesanan & Hamburger Menu Mobile -->
+                <div class="flex items-center gap-3">
+                    <!-- EDIT BAGIAN INI: Tombol CTA Utama -->
+                    <button onclick="openServiceModal()" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-primary-800 to-primary-700 hover:from-primary-700 hover:to-primary-600 text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer">
+                        <span>Pesan / Ajukan</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-accent-300"></i>
+                    </button>
+
+                    <!-- Tombol Menu Mobile -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl text-slate-700 hover:bg-stone-100 focus:outline-none" aria-label="Buka Menu">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dropdown Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#beranda" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Beranda</a>
+            <a href="#tentang" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Tentang Perusahaan & Visi Misi</a>
+            <a href="#layanan" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">4 Layanan Utama</a>
+            <a href="#galeri" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Portofolio & Armada</a>
+            <a href="#keunggulan" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Keunggulan Kami</a>
+            <a href="#testimoni" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Testimoni Klien</a>
+            <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-primary-50 hover:text-primary-700">Kontak</a>
+            <div class="pt-2">
+                <button onclick="openServiceModal()" class="w-full flex items-center justify-center gap-2 bg-primary-800 text-white text-sm font-semibold px-5 py-3 rounded-xl shadow">
+                    <span>Pesan Layanan / Ajukan Pendanaan</span>
+                    <i class="fa-solid fa-arrow-right text-xs text-accent-300"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================================================================== -->
+    <!-- 2. HERO SECTION                                                       -->
+    <!-- ===================================================================== -->
+    <section id="beranda" class="relative overflow-hidden bg-gradient-to-br from-charcoal-950 via-charcoal-900 to-primary-900 text-white py-20 lg:py-28">
+        <!-- Dekorasi Latar Belakang -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none">
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-600 blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-accent-400 blur-3xl"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Kolom Teks Hero -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- EDIT BAGIAN INI: Badge Perusahaan -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-accent-300 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Rosavelle Company · Solusi Terpadu Bisnis & Gaya Hidup</span>
+                    </div>
+
+                    <!-- EDIT BAGIAN INI: Judul Utama -->
+                    <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Satu Mitra Andal untuk <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 via-amber-200 to-rose-300">Mobilitas, Kreativitas & Finansial</span> Anda
+                    </h1>
+
+                    <!-- EDIT BAGIAN INI: Subjudul Deskripsi Singkat 4 Layanan -->
+                    <p class="text-base sm:text-lg text-stone-300 leading-relaxed max-w-2xl">
+                        <strong>Rosavelle Company</strong> menghadirkan ekosistem layanan profesional meliputi <strong>Jasa Taxi Eksekutif</strong>, <strong>Digital & Strategic Marketing</strong>, <strong>Desain Grafis</strong>, hingga <strong>Jasa Peminjaman Uang & Solusi Pendanaan</strong> yang cepat, transparan, dan terpercaya.
+                    </p>
+
+                    <!-- Pill Ringkasan 4 Layanan Cepat -->
+                    <div class="flex flex-wrap gap-2 pt-1">
+                        <a href="#layanan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-primary-800/80 border border-white/10 text-xs font-medium text-stone-100 transition-colors">
+                            <i class="fa-solid fa-taxi text-accent-400"></i> Jasa Taxi
+                        </a>
+                        <a href="#layanan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-primary-800/80 border border-white/10 text-xs font-medium text-stone-100 transition-colors">
+                            <i class="fa-solid fa-bullhorn text-accent-400"></i> Marketing
+                        </a>
+                        <a href="#layanan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-primary-800/80 border border-white/10 text-xs font-medium text-stone-100 transition-colors">
+                            <i class="fa-solid fa-pen-nib text-accent-400"></i> Desain Grafis
+                        </a>
+                        <a href="#layanan" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-primary-800/80 border border-white/10 text-xs font-medium text-stone-100 transition-colors">
+                            <i class="fa-solid fa-hand-holding-dollar text-accent-400"></i> Peminjaman Uang
+                        </a>
+                    </div>
+
+                    <!-- Tombol Aksi -->
+                    <div class="flex flex-wrap items-center gap-4 pt-3">
+                        <button onclick="openServiceModal()" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-400 to-amber-500 hover:from-amber-300 hover:to-accent-400 text-charcoal-950 font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition-all cursor-pointer">
+                            <span>Konsultasi & Pengajuan</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                        <a href="#layanan" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-6 py-3.5 rounded-xl backdrop-blur-sm transition-all">
+                            <span>Jelajahi 4 Layanan</span>
+                        </a>
+                    </div>
+
+                    <!-- Statistik Singkat -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/15 max-w-lg">
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-accent-400">4 Pilar</p>
+                            <p class="text-xs text-stone-300 mt-0.5">Divisi Layanan Terpadu</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-accent-400">24/7</p>
+                            <p class="text-xs text-stone-300 mt-0.5">Armada & Respon Cepat</p>
+                        </div>
+                        <div>
+                            <p class="font-heading text-2xl sm:text-3xl font-bold text-accent-400">100%</p>
+                            <p class="text-xs text-stone-300 mt-0.5">Transparan & Amanah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Gambar Utama Perusahaan -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden border-4 border-white/15 shadow-2xl bg-charcoal-800">
+                        <!-- EDIT BAGIAN INI: Ganti src dengan URL foto kantor / armada / tim Rosavelle Company -->
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80" 
+                             onerror="this.src='https://placehold.co/800x600/4c0519/ffffff?text=Rosavelle+Company'"
+                             alt="Kantor Pusat Rosavelle Company" 
+                             class="w-full h-80 sm:h-96 object-cover">
+                        
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-charcoal-950/95 via-charcoal-950/60 to-transparent p-6">
+                            <div class="flex items-center gap-3">
+                                <span class="w-10 h-10 rounded-xl bg-accent-400 text-charcoal-950 flex items-center justify-center font-bold shrink-0">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </span>
+                                <div>
+                                    <p class="text-sm font-bold text-white">Profesional, Cepat & Terpercaya</p>
+                                    <p class="text-xs text-stone-300">Transportasi • Marketing • Desain • Pendanaan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 3. TENTANG PERUSAHAAN, SAMBUTAN CEO & VISI MISI                       -->
+    <!-- ===================================================================== -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Sambutan CEO / Pimpinan Perusahaan -->
+            <div class="bg-stone-50 rounded-3xl p-6 sm:p-10 lg:p-12 border border-stone-200/80 shadow-sm mb-16">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    <!-- Foto Pimpinan -->
+                    <div class="lg:col-span-4 flex flex-col items-center text-center">
+                        <div class="relative w-52 h-60 sm:w-60 sm:h-72 rounded-2xl overflow-hidden shadow-lg border-4 border-white bg-stone-200">
+                            <!-- EDIT BAGIAN INI: Ganti src dengan foto Founder / CEO Rosavelle Company -->
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" 
+                                 onerror="this.src='https://placehold.co/500x600/881337/ffffff?text=CEO+Rosavelle'"
+                                 alt="Founder & CEO Rosavelle Company" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <!-- EDIT BAGIAN INI: Nama & Jabatan Pimpinan -->
+                        <div class="mt-4">
+                            <h3 class="font-heading font-bold text-lg text-charcoal-900">Levi Rosavelle</h3>
+                            <p class="text-xs font-semibold text-primary-700 uppercase tracking-wider mt-0.5">Founder & CEO · Rosavelle Company</p>
+                        </div>
+                    </div>
+
+                    <!-- Teks Sambutan -->
+                    <div class="lg:col-span-8 space-y-5">
+                        <div class="inline-flex items-center gap-2 text-primary-700 font-semibold text-sm">
+                            <span class="w-8 h-0.5 bg-primary-700"></span>
+                            <span>TENTANG ROSAVELLE COMPANY</span>
+                        </div>
+                        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-charcoal-900">
+                            Menghadirkan Kemudahan Mobilitas, Pertumbuhan Bisnis, dan Dukungan Finansial
+                        </h2>
+                        <!-- EDIT BAGIAN INI: Kutipan Sambutan Perusahaan -->
+                        <blockquote class="relative bg-white p-6 rounded-2xl border-l-4 border-primary-700 shadow-sm text-slate-700 leading-relaxed italic">
+                            <i class="fa-solid fa-quote-left text-primary-200 text-3xl mb-2 block"></i>
+                            "Rosavelle Company lahir dari semangat untuk menjadi mitra strategis yang menjawab kebutuhan nyata masyarakat dan pelaku usaha. Mulai dari kelancaran perjalanan melalui jasa taxi eksekutif, penguatan citra merek lewat desain grafis dan strategi marketing, hingga solusi peminjaman dana yang transparan—kami hadir memberikan standar pelayanan terbaik."
+                        </blockquote>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Didukung oleh tim pengemudi berpengalaman, kreator visual, spesialis pemasaran digital, serta konsultan keuangan profesional, setiap layanan kami dirancang untuk memberikan kenyamanan, keamanan, dan hasil terukur bagi setiap klien.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi & Misi Perusahaan -->
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- Card Visi -->
+                <div class="lg:col-span-5 bg-gradient-to-br from-charcoal-900 via-primary-900 to-primary-800 text-white rounded-3xl p-8 shadow-xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-accent-400/20 border border-accent-300/30 flex items-center justify-center text-accent-300 text-xl mb-6">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold mb-4">Visi Perusahaan</h3>
+                    <!-- EDIT BAGIAN INI: Teks Visi Perusahaan -->
+                    <p class="text-lg sm:text-xl font-medium leading-relaxed text-rose-50">
+                        "Menjadi Perusahaan Multi-Layanan Terdepan yang Terpercaya dalam Mendorong Mobilitas Modern, Inovasi Kreatif, dan Kemandirian Finansial Masyarakat."
+                    </p>
+                    <div class="mt-8 pt-6 border-t border-white/15 flex items-center gap-3 text-xs text-accent-300 font-semibold uppercase tracking-wider">
+                        <i class="fa-solid fa-gem"></i>
+                        <span>Integrity • Speed • Creativity • Trust</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 Poin Misi Utama -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 border border-stone-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-charcoal-900">Misi Perusahaan</h3>
+                    </div>
+
+                    <!-- EDIT BAGIAN INI: Daftar Misi Perusahaan -->
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-stone-50 hover:bg-primary-50/60 transition-colors border border-stone-100">
+                            <span class="w-7 h-7 rounded-lg bg-primary-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                            <p class="text-sm text-slate-700 leading-snug">Menyediakan layanan taxi dan transportasi eksekutif yang aman, bersih, nyaman, serta tepat waktu.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-stone-50 hover:bg-primary-50/60 transition-colors border border-stone-100">
+                            <span class="w-7 h-7 rounded-lg bg-primary-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                            <p class="text-sm text-slate-700 leading-snug">Merancang strategi digital & strategic marketing yang efektif untuk meningkatkan penjualan dan jangkauan merek klien.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-stone-50 hover:bg-primary-50/60 transition-colors border border-stone-100">
+                            <span class="w-7 h-7 rounded-lg bg-primary-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                            <p class="text-sm text-slate-700 leading-snug">Menciptakan karya desain grafis dan identitas visual berkelas yang memperkuat daya tarik bisnis.</p>
+                        </div>
+                        <div class="flex items-start gap-3 p-4 rounded-2xl bg-stone-50 hover:bg-primary-50/60 transition-colors border border-stone-100">
+                            <span class="w-7 h-7 rounded-lg bg-primary-800 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+                            <p class="text-sm text-slate-700 leading-snug">Memberikan akses peminjaman dana & pembiayaan usaha/pribadi dengan syarat jelas, proses cepat, dan penuh integritas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 4. EMPAT LAYANAN UTAMA ROSAVELLE COMPANY                              -->
+    <!-- ===================================================================== -->
+    <section id="layanan" class="py-20 bg-stone-100/90 border-y border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-primary-700 bg-primary-100 px-3.5 py-1.5 rounded-full">Divisi & Solusi Kami</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-charcoal-900 mt-4">Empat Layanan Utama Rosavelle Company</h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">Pilih layanan yang sesuai dengan kebutuhan pribadi maupun pengembangan bisnis Anda.</p>
+            </div>
+
+            <!-- Grid 4 Kartu Layanan Utama -->
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- EDIT BAGIAN INI: Layanan 1 - Jasa Taxi & Transportasi Eksekutif -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-taxi"></i>
+                            </div>
+                            <span class="text-xs font-bold bg-amber-50 text-amber-800 border border-amber-200 px-3 py-1 rounded-full">01 · MOBILITY</span>
+                        </div>
+                        <h3 class="font-heading text-xl sm:text-2xl font-bold text-charcoal-900 mb-3">
+                            Jasa Taxi & Transportasi Eksekutif
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Layanan antar-jemput profesional dalam maupun luar kota dengan armada terawat, bersih, nyaman, serta pengemudi ramah dan berpengalaman yang menjamin ketepatan waktu Anda.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 border-t border-stone-100 pt-4">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-amber-600"></i> Antar-Jemput Bandara, Stasiun & Perjalanan Dinas</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-amber-600"></i> Layanan Charter Harian & Perjalanan Luar Kota</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-amber-600"></i> Armada Full AC, Bersih & Reservasi 24 Jam</li>
+                        </ul>
+                    </div>
+                    <div class="mt-7 pt-4 flex flex-col sm:flex-row gap-3">
+                        <button onclick="openDetailModal('taxi')" class="flex-1 py-3 px-4 rounded-xl border border-stone-300 hover:border-charcoal-900 text-charcoal-900 text-xs font-bold transition-colors cursor-pointer">
+                            Detail Layanan
+                        </button>
+                        <button onclick="openServiceModal('Jasa Taxi & Transportasi Eksekutif')" class="flex-1 py-3 px-4 rounded-xl bg-charcoal-900 hover:bg-primary-800 text-white text-xs font-bold transition-colors cursor-pointer">
+                            Pesan Taxi Sekarang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- EDIT BAGIAN INI: Layanan 2 - Digital & Strategic Marketing -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-primary-100 text-primary-700 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-bullhorn"></i>
+                            </div>
+                            <span class="text-xs font-bold bg-primary-50 text-primary-800 border border-primary-200 px-3 py-1 rounded-full">02 · MARKETING</span>
+                        </div>
+                        <h3 class="font-heading text-xl sm:text-2xl font-bold text-charcoal-900 mb-3">
+                            Digital & Strategic Marketing
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Solusi pemasaran menyeluruh untuk meningkatkan visibilitas brand, menjangkau target pasar yang tepat, dan mengakselerasi pertumbuhan omzet bisnis Anda secara terukur.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 border-t border-stone-100 pt-4">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary-700"></i> Manajemen Media Sosial & Kampanye Iklan Digital</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary-700"></i> Strategi Branding, Riset Pasar & Ekspansi Bisnis</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-primary-700"></i> Optimasi Konversi & Laporan Performa Berkala</li>
+                        </ul>
+                    </div>
+                    <div class="mt-7 pt-4 flex flex-col sm:flex-row gap-3">
+                        <button onclick="openDetailModal('marketing')" class="flex-1 py-3 px-4 rounded-xl border border-stone-300 hover:border-charcoal-900 text-charcoal-900 text-xs font-bold transition-colors cursor-pointer">
+                            Detail Layanan
+                        </button>
+                        <button onclick="openServiceModal('Digital & Strategic Marketing')" class="flex-1 py-3 px-4 rounded-xl bg-charcoal-900 hover:bg-primary-800 text-white text-xs font-bold transition-colors cursor-pointer">
+                            Konsultasi Marketing
+                        </button>
+                    </div>
+                </div>
+
+                <!-- EDIT BAGIAN INI: Layanan 3 - Desain Grafis & Identitas Visual -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-700 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <span class="text-xs font-bold bg-purple-50 text-purple-800 border border-purple-200 px-3 py-1 rounded-full">03 · CREATIVE</span>
+                        </div>
+                        <h3 class="font-heading text-xl sm:text-2xl font-bold text-charcoal-900 mb-3">
+                            Desain Grafis & Identitas Visual
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Wujudkan tampilan bisnis yang berkelas dan mudah diingat melalui rancangan visual profesional untuk kebutuhan promosi digital maupun media cetak.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 border-t border-stone-100 pt-4">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-purple-600"></i> Pembuatan Logo Perusahaan & Brand Guidelines</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-purple-600"></i> Desain Konten Feed/Story Sosial Media & Banner</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-purple-600"></i> Desain Kemasan (Packaging), Brosur & Company Profile</li>
+                        </ul>
+                    </div>
+                    <div class="mt-7 pt-4 flex flex-col sm:flex-row gap-3">
+                        <button onclick="openDetailModal('desain')" class="flex-1 py-3 px-4 rounded-xl border border-stone-300 hover:border-charcoal-900 text-charcoal-900 text-xs font-bold transition-colors cursor-pointer">
+                            Detail Layanan
+                        </button>
+                        <button onclick="openServiceModal('Desain Grafis & Identitas Visual')" class="flex-1 py-3 px-4 rounded-xl bg-charcoal-900 hover:bg-primary-800 text-white text-xs font-bold transition-colors cursor-pointer">
+                            Pesan Desain Grafis
+                        </button>
+                    </div>
+                </div>
+
+                <!-- EDIT BAGIAN INI: Layanan 4 - Jasa Peminjaman Uang & Solusi Pendanaan -->
+                <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <span class="text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1 rounded-full">04 · FINANCE</span>
+                        </div>
+                        <h3 class="font-heading text-xl sm:text-2xl font-bold text-charcoal-900 mb-3">
+                            Jasa Peminjaman Uang & Solusi Pendanaan
+                        </h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-5">
+                            Dukungan pinjaman dana cepat untuk kebutuhan modal usaha maupun keperluan pribadi mendesak dengan proses verifikasi ringkas, skema cicilan jelas, transparan, dan terpercaya.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 border-t border-stone-100 pt-4">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Pinjaman Modal Kerja UMKM & Pengembangan Usaha</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Dana Tunai Pribadi Cepat Cair & Privasi Terjaga</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Tenor Fleksibel & Rincian Biaya Transparan Sejak Awal</li>
+                        </ul>
+                    </div>
+                    <div class="mt-7 pt-4 flex flex-col sm:flex-row gap-3">
+                        <button onclick="openDetailModal('pendanaan')" class="flex-1 py-3 px-4 rounded-xl border border-stone-300 hover:border-charcoal-900 text-charcoal-900 text-xs font-bold transition-colors cursor-pointer">
+                            Detail Layanan
+                        </button>
+                        <button onclick="openServiceModal('Jasa Peminjaman Uang & Solusi Pendanaan')" class="flex-1 py-3 px-4 rounded-xl bg-primary-800 hover:bg-primary-700 text-white text-xs font-bold transition-colors cursor-pointer">
+                            Ajukan Pinjaman Dana
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 5. GALERI ARMADA, KARYA & AKTIVITAS PERUSAHAAN (DENGAN FILTER TAB)    -->
+    <!-- ===================================================================== -->
+    <section id="galeri" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-primary-700 bg-primary-100 px-3.5 py-1.5 rounded-full">Showcase Perusahaan</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-charcoal-900 mt-4">Armada, Studio Kreatif & Operasional</h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">Standar fasilitas dan hasil kerja nyata dari setiap divisi Rosavelle Company.</p>
+                </div>
+
+                <!-- Tombol Filter Tab Interaktif -->
+                <div class="inline-flex flex-wrap gap-2 bg-stone-100 p-1.5 rounded-2xl border border-stone-200 self-start">
+                    <button onclick="filterGaleri('semua')" data-filter="semua" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-primary-800 text-white shadow-sm transition-all cursor-pointer">
+                        Semua (6)
+                    </button>
+                    <button onclick="filterGaleri('taxi')" data-filter="taxi" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-charcoal-900 transition-all cursor-pointer">
+                        Armada Taxi (2)
+                    </button>
+                    <button onclick="filterGaleri('kreatif')" data-filter="kreatif" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-charcoal-900 transition-all cursor-pointer">
+                        Marketing & Desain (2)
+                    </button>
+                    <button onclick="filterGaleri('pendanaan')" data-filter="pendanaan" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-charcoal-900 transition-all cursor-pointer">
+                        Kantor & Pendanaan (2)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Galeri -->
+            <!-- EDIT BAGIAN INI: Ganti URL gambar (src) pada masing-masing kartu galeri -->
+            <div id="galeri-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Armada Taxi Eksekutif -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="taxi">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/14171d/ffffff?text=Armada+Taxi+Eksekutif'" alt="Armada Taxi Eksekutif Rosavelle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-600/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Jasa Taxi</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Armada Taxi Eksekutif</h3>
+                        <p class="text-xs text-slate-500 mt-1">Unit kendaraan modern dengan perawatan rutin untuk kenyamanan perjalanan Anda.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Layanan Antar-Jemput Bandara & VIP -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="taxi">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/14171d/ffffff?text=Antar+Jemput+Profesional'" alt="Layanan Antar Jemput Profesional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-amber-600/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Jasa Taxi</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Antar-Jemput Tepat Waktu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Pengemudi profesional siap melayani perjalanan bisnis, bandara, maupun keluarga.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Studio Desain Grafis & Branding -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="kreatif">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/881337/ffffff?text=Studio+Desain+Grafis'" alt="Studio Desain Grafis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-purple-700/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Desain Grafis</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Desain Identitas Visual & Logo</h3>
+                        <p class="text-xs text-slate-500 mt-1">Perancangan logo, kemasan produk, dan aset visual berkarakter kuat untuk brand Anda.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Strategi Digital Marketing -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="kreatif">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/881337/ffffff?text=Digital+Marketing'" alt="Strategi Digital Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-primary-800/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Marketing</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Kampanye Digital & Analisis Pasar</h3>
+                        <p class="text-xs text-slate-500 mt-1">Perencanaan iklan tertarget dan manajemen konten untuk meningkatkan konversi klien.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Ruang Konsultasi Pendanaan -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="pendanaan">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/065f46/ffffff?text=Solusi+Pendanaan'" alt="Konsultasi Peminjaman Dana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-700/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Pendanaan</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Konsultasi Pembiayaan Usaha & Pribadi</h3>
+                        <p class="text-xs text-slate-500 mt-1">Simulasi angsuran transparan dan pendampingan pengajuan pinjaman dana cepat.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Kantor Operasional Rosavelle -->
+                <div class="galeri-card group rounded-3xl overflow-hidden border border-stone-200 bg-white shadow-sm hover:shadow-lg transition-all" data-category="pendanaan">
+                    <div class="relative h-52 overflow-hidden bg-stone-200">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x400/065f46/ffffff?text=Tim+Profesional'" alt="Tim Profesional Rosavelle Company" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-emerald-700/95 backdrop-blur-sm text-white text-[11px] font-semibold px-3 py-1 rounded-full">Kantor & Tim</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-heading font-bold text-base text-charcoal-900">Pelayanan Klien Terpadu</h3>
+                        <p class="text-xs text-slate-500 mt-1">Tim customer relation siap melayani kebutuhan transportasi, kreatif, maupun pendanaan.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 6. KEUNGGULAN & ALUR KERJA ROSAVELLE COMPANY                          -->
+    <!-- ===================================================================== -->
+    <section id="keunggulan" class="py-20 bg-charcoal-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                
+                <!-- Kolom Kiri: Mengapa Memilih Rosavelle -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-accent-300 bg-white/10 px-3.5 py-1.5 rounded-full">Standar Kualitas</span>
+                    <h2 class="font-heading text-3xl font-bold">Mengapa Memilih Rosavelle Company?</h2>
+                    <p class="text-stone-300 text-sm leading-relaxed">
+                        Kami menggabungkan kecepatan operasional, kreativitas tanpa batas, serta transparansi finansial dalam satu atap perusahaan.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-amber-500/20 text-accent-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base">Respon Cepat & Tepat Waktu</h4>
+                                <p class="text-xs text-stone-400">Penjemputan taxi terjadwal, pengerjaan desain tepat deadline, dan pencairan dana cepat.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-primary-600/30 text-rose-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-file-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base">Transparan & Amanah</h4>
+                                <p class="text-xs text-stone-400">Tarif taxi jelas, rincian biaya marketing terbuka, dan akad pinjaman tanpa biaya tersembunyi.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-layer-group"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-base">Solusi Lengkap Satu Pintu</h4>
+                                <p class="text-xs text-stone-400">Klien UMKM maupun korporat dapat mengakses modal usaha, desain brand, marketing, hingga transportasi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Alur Pemesanan & Pengajuan -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-accent-300 bg-white/10 px-3.5 py-1.5 rounded-full">Cara Kerja</span>
+                    <h2 class="font-heading text-3xl font-bold">4 Langkah Mudah Menggunakan Layanan Kami</h2>
+                    <p class="text-stone-300 text-sm leading-relaxed">
+                        Proses pemesanan jasa taxi, order desain/marketing, hingga pengajuan pinjaman dana dirancang praktis dan efisien.
+                    </p>
+
+                    <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                        <div class="p-5 rounded-2xl bg-charcoal-900 border border-accent-400/25">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-lg bg-accent-400 text-charcoal-950 font-bold text-xs">Langkah 01</span>
+                                <i class="fa-solid fa-list-check text-stone-400"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-base text-white">Pilih Layanan yang Dibutuhkan</h4>
+                            <p class="text-xs text-stone-400 mt-1.5">Tentukan layanan Taxi, Marketing, Desain Grafis, atau Peminjaman Uang melalui formulir online.</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-charcoal-900 border border-accent-400/25">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-lg bg-primary-700 text-white font-bold text-xs">Langkah 02</span>
+                                <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-base text-white">Konsultasi & Verifikasi Cepat</h4>
+                            <p class="text-xs text-stone-400 mt-1.5">Tim divisi terkait segera menghubungi Anda via WhatsApp untuk konfirmasi jadwal, brief, atau syarat dana.</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-charcoal-900 border border-stone-800">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-lg bg-stone-200 text-charcoal-950 font-bold text-xs">Langkah 03</span>
+                                <i class="fa-solid fa-gears text-stone-400"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-base text-white">Eksekusi & Proses Layanan</h4>
+                            <p class="text-xs text-stone-400 mt-1.5">Penjemputan armada, pengerjaan proyek kreatif/kampanye, atau persetujuan pencairan dana dilakukan segera.</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-charcoal-900 border border-stone-800">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="px-2.5 py-1 rounded-lg bg-emerald-500 text-charcoal-950 font-bold text-xs">Langkah 04</span>
+                                <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            </div>
+                            <h4 class="font-heading font-bold text-base text-white">Serah Terima & Layanan Purna Jual</h4>
+                            <p class="text-xs text-stone-400 mt-1.5">Garansi kepuasan perjalanan, revisi desain, laporan marketing, serta pendampingan pelunasan fleksibel.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 7. TESTIMONI KLIEN                                                    -->
+    <!-- ===================================================================== -->
+    <section id="testimoni" class="py-20 bg-stone-50 border-t border-stone-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-14">
+                <span class="text-xs font-bold uppercase tracking-widest text-primary-700 bg-primary-100 px-3.5 py-1.5 rounded-full">Kepercayaan Klien</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-charcoal-900 mt-4">Apa Kata Klien Rosavelle Company?</h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">Pengalaman nyata pelanggan jasa transportasi, branding, hingga mitra pendanaan usaha kami.</p>
+            </div>
+
+            <!-- EDIT BAGIAN INI: Kartu Testimoni Klien -->
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Testimoni 1: Jasa Taxi -->
+                <div class="bg-white rounded-3xl p-7 border border-stone-200/90 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-accent-500 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed italic">
+                            "Layanan Taxi nya sangatlah memuaskan, driver memiliki sikap yang baik dan cara mengendarainya sangatlah membuat saya nyaman."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-stone-100">
+                        <div class="w-11 h-11 rounded-full bg-charcoal-900 text-accent-300 font-bold flex items-center justify-center text-sm shrink-0">
+                            RH
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-sm text-charcoal-900">Jhonathan Patrick</h4>
+                            <p class="text-xs text-primary-700 font-medium">Klien Jasa Taxi Eksekutif</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 2: Marketing & Desain Grafis -->
+                <div class="bg-gradient-to-br from-charcoal-900 via-primary-900 to-primary-800 text-white rounded-3xl p-7 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-accent-300 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-rose-50 leading-relaxed italic">
+                            "Logo baru dan materi desain grafis dari Rosavelle membuat produk kami terlihat jauh lebih premium. Ditambah strategi digital marketing mereka, penjualan naik signifikan!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-white/15">
+                        <div class="w-11 h-11 rounded-full bg-accent-400 text-charcoal-950 font-bold flex items-center justify-center text-sm shrink-0">
+                            NA
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-sm text-white">Charlotte Jeneira</h4>
+                            <p class="text-xs text-accent-300 font-medium">Klien Desain & Marketing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 3: Peminjaman Uang -->
+                <div class="bg-white rounded-3xl p-7 border border-stone-200/90 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-accent-500 text-xs gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-slate-700 leading-relaxed italic">
+                            "Dengan adanya layanan peminjaman uang dari Rosavelle Company, sangatlah membantu saya disaat waktu waktu krisis akan financial."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 mt-6 pt-5 border-t border-stone-100">
+                        <div class="w-11 h-11 rounded-full bg-charcoal-900 text-accent-300 font-bold flex items-center justify-center text-sm shrink-0">
+                            BS
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold text-sm text-charcoal-900">Laura Anastasia</h4>
+                            <p class="text-xs text-primary-700 font-medium">Klien Solusi Pendanaan</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- 8. KONTAK, LOKASI & FOOTER                                            -->
+    <!-- ===================================================================== -->
+    <footer id="kontak" class="bg-charcoal-950 text-stone-300 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 pb-16 border-b border-stone-800">
+                
+                <!-- Kolom Info Perusahaan -->
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-xl bg-primary-800 border border-accent-400/30 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-crown text-lg text-accent-400"></i>
+                        </div>
+                        <div>
+                            <span class="font-heading font-extrabold text-lg text-white block leading-none">ROSAVELLE COMPANY</span>
+                            <span class="text-[11px] text-accent-300 uppercase tracking-wider mt-1 block">Mobility • Marketing • Design • Finance</span>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-stone-400 leading-relaxed">
+                        Perusahaan penyedia layanan terpadu meliputi Jasa Taxi & Transportasi Eksekutif, Digital & Strategic Marketing, Desain Grafis, serta Jasa Peminjaman Uang & Solusi Pendanaan terpercaya.
+                    </p>
+
+                    <!-- EDIT BAGIAN INI: Alamat Kantor, Telepon, WhatsApp, Instagram -->
+                    <div class="space-y-3 text-sm pt-2">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-accent-400 mt-1"></i>
+                            <span>712 Prickle Pine - Blok A</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-accent-400"></i>
+                            <a href="mailto:rosavellecompany@gmail.com" class="hover:text-white transition-colors">rosavellecompany@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                            <div class="flex flex-wrap gap-x-3 gap-y-1">
+                                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">CS Utama: +62 812-3456-7890</a>
+                                <span class="text-stone-600">|</span>
+                                <a href="https://wa.me/6289876543210" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors">Divisi Pendanaan: +62 898-7654-3210</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-rose-400 text-base"></i>
+                            <a href="https://instagram.com/rosavellecompany" target="_blank" rel="noopener" class="hover:text-rose-400 transition-colors">@rosavellecompany</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Daftar 4 Layanan Utama -->
+                <div class="lg:col-span-3 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-base">Layanan Kami</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li>
+                            <button onclick="openServiceModal('Jasa Taxi & Transportasi Eksekutif')" class="hover:text-accent-300 transition-colors text-left cursor-pointer">
+                                Jasa Taxi & Transportasi Eksekutif
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="openServiceModal('Digital & Strategic Marketing')" class="hover:text-accent-300 transition-colors text-left cursor-pointer">
+                                Digital & Strategic Marketing
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="openServiceModal('Desain Grafis & Identitas Visual')" class="hover:text-accent-300 transition-colors text-left cursor-pointer">
+                                Desain Grafis & Identitas Visual
+                            </button>
+                        </li>
+                        <li>
+                            <button onclick="openServiceModal('Jasa Peminjaman Uang & Solusi Pendanaan')" class="hover:text-accent-300 transition-colors text-left cursor-pointer">
+                                Jasa Peminjaman Uang & Pendanaan
+                            </button>
+                        </li>
+                        <li class="pt-2 border-t border-stone-800"><a href="#tentang" class="hover:text-accent-300 transition-colors">Tentang Perusahaan</a></li>
+                        <li><a href="#testimoni" class="hover:text-accent-300 transition-colors">Testimoni Klien</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom Peta Lokasi Google Maps -->
+                <div class="lg:col-span-4 space-y-4">
+                    <h4 class="font-heading font-bold text-white text-base">Lokasi Kantor Pusat</h4>
+                    <!-- EDIT BAGIAN INI: Embed Google Maps Lokasi Kantor Rosavelle Company -->
+                    <div class="rounded-2xl overflow-hidden border border-stone-800 h-52 bg-charcoal-900">
+                        <iframe 
+                            title="Peta Lokasi Kantor Rosavelle Company"
+                            src="https://www.google.com/maps?q=Banjaran+Kabupaten+Bandung&output=embed" 
+                            class="w-full h-full border-0" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+                <p>&copy; 2026 Rosavelle Company. Hak Cipta Dilindungi Undang-Undang.</p>
+                <p>Jasa Taxi · Marketing · Desain Grafis · Solusi Pendanaan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 1: DETAIL MASING-MASING LAYANAN                                 -->
+    <!-- ===================================================================== -->
+    <div id="detail-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-charcoal-950/80 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative">
+            <button onclick="closeDetailModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 text-slate-600 flex items-center justify-center cursor-pointer" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span id="detail-badge" class="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-100 px-3 py-1 rounded-full">Detail Layanan</span>
+            <h3 id="detail-title" class="font-heading text-2xl font-bold text-charcoal-900 mt-3">Judul Layanan</h3>
+            <p id="detail-desc" class="text-sm text-slate-600 leading-relaxed mt-3"></p>
+
+            <div class="mt-5 p-4 rounded-2xl bg-stone-50 border border-stone-200/80">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal-800 mb-2.5">Cakupan & Fasilitas Layanan:</p>
+                <ul id="detail-list" class="space-y-2 text-xs sm:text-sm text-slate-700"></ul>
+            </div>
+
+            <div class="mt-6 flex gap-3">
+                <button onclick="closeDetailModal()" class="flex-1 py-3 px-4 rounded-xl border border-stone-300 text-slate-700 text-xs font-bold hover:bg-stone-50 cursor-pointer">
+                    Tutup
+                </button>
+                <button id="detail-cta-btn" class="flex-1 py-3 px-4 rounded-xl bg-primary-800 hover:bg-primary-700 text-white text-xs font-bold shadow cursor-pointer">
+                    Pesan / Ajukan Sekarang
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- MODAL 2: FORMULIR PEMESANAN & PENGAJUAN LAYANAN (TERHUBUNG WHATSAPP)  -->
+    <!-- ===================================================================== -->
+    <div id="service-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-charcoal-950/80 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-stone-200 relative">
+            <button onclick="closeServiceModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-stone-100 hover:bg-stone-200 text-slate-600 flex items-center justify-center cursor-pointer" aria-label="Tutup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="mb-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary-700 bg-primary-100 px-3 py-1 rounded-full">Rosavelle Company</span>
+                <h3 class="font-heading text-2xl font-bold text-charcoal-900 mt-3">Formulir Pemesanan & Pengajuan</h3>
+                <p class="text-xs text-slate-500 mt-1">Pilih layanan yang Anda butuhkan untuk terhubung langsung dengan tim admin kami via WhatsApp.</p>
+            </div>
+
+            <form id="service-form" onsubmit="submitServiceToWhatsApp(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap / Nama Usaha *</label>
+                    <input type="text" id="client-name" required placeholder="Contoh: Andi Pratama / CV Maju Jaya" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-primary-700">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Pilih Layanan Utama *</label>
+                    <select id="client-service" required class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-primary-700">
+                        <option value="Jasa Taxi & Transportasi Eksekutif">1. Jasa Taxi & Transportasi Eksekutif</option>
+                        <option value="Digital & Strategic Marketing">2. Digital & Strategic Marketing</option>
+                        <option value="Desain Grafis & Identitas Visual">3. Desain Grafis & Identitas Visual</option>
+                        <option value="Jasa Peminjaman Uang & Solusi Pendanaan">4. Jasa Peminjaman Uang & Solusi Pendanaan</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Keterangan Kebutuhan *</label>
+                    <textarea id="client-note" rows="3" required placeholder="Contoh: Pesan taxi bandara besok jam 07.00 / Pembuatan logo usaha / Pengajuan pinjaman dana Rp 10 juta..." class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-primary-700"></textarea>
+                </div>
+
+                <!-- EDIT BAGIAN INI: Ganti nomor WhatsApp tujuan (awali dengan 62) -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Hubungi Divisi Admin</label>
+                    <select id="client-admin" class="w-full px-4 py-2.5 rounded-xl border border-stone-300 text-sm bg-white focus:outline-none focus:border-primary-700">
+                        <option value="6281234567890">Admin Umum (Taxi, Marketing & Desain)</option>
+                        <option value="6289876543210">Admin Khusus Peminjaman Uang & Pendanaan</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg flex items-center justify-center gap-2 transition-colors cursor-pointer">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Kirim Permintaan ke WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===================================================================== -->
+    <!-- JAVASCRIPT INTERAKTIF                                                 -->
+    <!-- ===================================================================== -->
+    <script>
+        // 1. Toggle Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Filter Tab Galeri Perusahaan
+        function filterGaleri(kategori) {
+            const cards = document.querySelectorAll('.galeri-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === kategori) {
+                    btn.classList.add('bg-primary-800', 'text-white', 'shadow-sm');
+                    btn.classList.remove('text-slate-600');
+                } else {
+                    btn.classList.remove('bg-primary-800', 'text-white', 'shadow-sm');
+                    btn.classList.add('text-slate-600');
+                }
+            });
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (kategori === 'semua' || cardCategory === kategori) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // 3. Data & Kontrol Modal Detail Layanan
+        const serviceDetailsData = {
+            taxi: {
+                badge: '01 · Jasa Taxi & Transportasi',
+                title: 'Jasa Taxi & Transportasi Eksekutif',
+                desc: 'Kami menyediakan armada kendaraan nyaman dengan pengemudi profesional untuk menjamin perjalanan pribadi, tamu VIP, maupun perjalanan dinas Anda berjalan aman dan tepat waktu.',
+                serviceName: 'Jasa Taxi & Transportasi Eksekutif',
+                items: [
+                    'Antar-jemput dalam kota, bandara, stasiun, dan hotel.',
+                    'Layanan charter harian atau perjalanan dinas luar kota.',
+                    'Unit kendaraan bersih, full AC, dan rutin diservis berkala.',
+                    'Tarif transparan dan layanan pemesanan siap 24 jam.'
+                ]
+            },
+            marketing: {
+                badge: '02 · Digital & Strategic Marketing',
+                title: 'Digital & Strategic Marketing',
+                desc: 'Tingkatkan daya saing dan angka penjualan bisnis Anda melalui perencanaan kampanye pemasaran digital dan strategi ekspansi pasar yang dirancang khusus sesuai target audiens.',
+                serviceName: 'Digital & Strategic Marketing',
+                items: [
+                    'Pengelolaan akun media sosial (Instagram, TikTok, Facebook).',
+                    'Pemasangan dan optimasi iklan berbayar (Meta Ads & Google Ads).',
+                    'Penyusunan strategi branding, positioning, dan promosi produk.',
+                    'Evaluasi performa kampanye dan laporan pertumbuhan berkala.'
+                ]
+            },
+            desain: {
+                badge: '03 · Desain Grafis & Identitas Visual',
+                title: 'Desain Grafis & Identitas Visual',
+                desc: 'Bangun kesan pertama yang profesional dan meyakinkan di mata pelanggan melalui aset visual berkualitas tinggi untuk kebutuhan digital maupun cetak.',
+                serviceName: 'Desain Grafis & Identitas Visual',
+                items: [
+                    'Pembuatan logo perusahaan, monogram, dan panduan identitas merek.',
+                    'Desain konten promosi media sosial, poster, banner, dan katalog.',
+                    'Desain kemasan produk (packaging), kartu nama, dan company profile.',
+                    'File master resolusi tinggi siap cetak dan siap unggah digital.'
+                ]
+            },
+            pendanaan: {
+                badge: '04 · Jasa Peminjaman Uang & Pendanaan',
+                title: 'Jasa Peminjaman Uang & Solusi Pendanaan',
+                desc: 'Solusi pembiayaan cepat dan terpercaya untuk mendukung tambahan modal usaha UMKM maupun kebutuhan dana tunai pribadi dengan ketentuan yang jelas dan transparan.',
+                serviceName: 'Jasa Peminjaman Uang & Solusi Pendanaan',
+                items: [
+                    'Pembiayaan modal kerja usaha dan kebutuhan dana pribadi mendesak.',
+                    'Proses verifikasi data ringkas dengan pencairan dana cepat.',
+                    'Pilihan tenor cicilan fleksibel sesuai kemampuan finansial.',
+                    'Rincian perjanjian transparan tanpa biaya tersembunyi.'
+                ]
+            }
+        };
+
+        const detailModal = document.getElementById('detail-modal');
+
+        function openDetailModal(key) {
+            const data = serviceDetailsData[key];
+            if (!data) return;
+
+            document.getElementById('detail-badge').textContent = data.badge;
+            document.getElementById('detail-title').textContent = data.title;
+            document.getElementById('detail-desc').textContent = data.desc;
+
+            const listEl = document.getElementById('detail-list');
+            listEl.innerHTML = '';
+            data.items.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start gap-2.5';
+                li.innerHTML = `<i class="fa-solid fa-circle-check text-primary-700 mt-0.5"></i><span>${item}</span>`;
+                listEl.appendChild(li);
+            });
+
+            const ctaBtn = document.getElementById('detail-cta-btn');
+            ctaBtn.onclick = () => {
+                closeDetailModal();
+                openServiceModal(data.serviceName);
+            };
+
+            detailModal.classList.remove('hidden');
+            detailModal.classList.add('flex');
+        }
+
+        function closeDetailModal() {
+            detailModal.classList.add('hidden');
+            detailModal.classList.remove('flex');
+        }
+
+        detailModal.addEventListener('click', (e) => {
+            if (e.target === detailModal) closeDetailModal();
+        });
+
+        // 4. Kontrol Modal Formulir Pemesanan & Pengajuan WhatsApp
+        const serviceModal = document.getElementById('service-modal');
+        const clientServiceSelect = document.getElementById('client-service');
+        const clientAdminSelect = document.getElementById('client-admin');
+
+        function openServiceModal(selectedService = null) {
+            if (selectedService) {
+                clientServiceSelect.value = selectedService;
+                // Otomatis arahkan ke admin pendanaan jika memilih jasa peminjaman uang
+                if (selectedService.includes('Peminjaman Uang')) {
+                    clientAdminSelect.selectedIndex = 1;
+                } else {
+                    clientAdminSelect.selectedIndex = 0;
+                }
+            }
+            serviceModal.classList.remove('hidden');
+            serviceModal.classList.add('flex');
+        }
+
+        function closeServiceModal() {
+            serviceModal.classList.add('hidden');
+            serviceModal.classList.remove('flex');
+        }
+
+        serviceModal.addEventListener('click', (e) => {
+            if (e.target === serviceModal) closeServiceModal();
+        });
+
+        // 5. Kirim Data Form ke WhatsApp
+        function submitServiceToWhatsApp(event) {
+            event.preventDefault();
+            const nama = document.getElementById('client-name').value.trim();
+            const layanan = document.getElementById('client-service').value;
+            const catatan = document.getElementById('client-note').value.trim();
+            const adminNumber = document.getElementById('client-admin').value;
+
+            const pesan = `Halo Admin Rosavelle Company,%0A%0ASaya ingin melakukan pemesanan / konsultasi layanan:%0A• *Nama / Usaha:* ${encodeURIComponent(nama)}%0A• *Layanan:* ${encodeURIComponent(layanan)}%0A• *Keterangan:* ${encodeURIComponent(catatan)}%0A%0AMohon informasi lebih lanjut. Terima kasih.`;
+
+            window.open(`https://wa.me/${adminNumber}?text=${pesan}`, '_blank');
+            closeServiceModal();
+        }
+    </script>
+</body>
+</html>
